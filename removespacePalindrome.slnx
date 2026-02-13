@@ -1,3 +1,36 @@
-<Solution>
-  <Project Path="removespacePalindrome/removespacePalindrome.csproj" />
-</Solution>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace removespacePalindrome
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter the sentence: ");
+            String s = Console.ReadLine();
+            s = s.Replace(" ", "");
+            s = s.Replace(".", "");
+            s = s.Replace(",", "");
+            s = s.Replace("$", "");
+            s = s.Replace("#", "");
+            s = s.Replace("%", "");
+            s = s.Replace("^", "");
+            s = s.Replace("*", "");
+            s = s.Replace("!", "");
+            bool is_palindrome = true;
+            for (int i=0;i<s.Length/2;i++)
+            {
+                if (s[i] != s[s.Length-1-i])
+                {
+                    is_palindrome = false;
+                    break;
+                }
+            }
+            Console.WriteLine(is_palindrome);
+        }
+    }
+}
